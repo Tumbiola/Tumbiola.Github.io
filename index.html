@@ -12,14 +12,77 @@
   <a href="#contact">Contact</a>
 </div>
     
+    <style>
+      
+   #myDIV {
+  width: 300px;
+  height: 200px;
+  background: red;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  50% {background-color: blue;}
+}
+      
+      
+      
+    /* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+   </style> 
     
   </head>
  
   
   <body>
     <p> <h1>What is that on your helmet?</h1><p/>
- 
-  
+
+  <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+    
+    
   
   </body>
 </html>
